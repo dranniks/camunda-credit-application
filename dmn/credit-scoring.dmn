@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="credit" name="Скоринг заявки" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.52.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.10.0">
+  <decision id="credit-scoring" name="Decision 1">
+    <variable id="Variable_1" name="Decision 1" typeRef="Any" />
+    <decisionTable id="DecisionTable_0nd3ujd" hitPolicy="FIRST">
+      <input id="Input_1" label="Платеж по силам">
+        <inputExpression id="InputExpression_1" typeRef="boolean">
+          <text>income * 0.4 &gt;= amount / term</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1xcvikt" label="Сумма">
+        <inputExpression id="LiteralExpression_09mxbx4" typeRef="number">
+          <text>amount</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_187wjr7" label="Стаж, мес.">
+        <inputExpression id="LiteralExpression_0xkww9h" typeRef="number">
+          <text>experienceMonths</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Решение" name="scoring" typeRef="string" />
+      <rule id="DecisionRule_0dtgi84">
+        <description>Недостаточный платеж - сразу отказ</description>
+        <inputEntry id="UnaryTests_0cujcdg">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04vccmg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ti962w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19ou7xr">
+          <text>"reject"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x9qr8v">
+        <description>Крупная сумма - ручная провкерка</description>
+        <inputEntry id="UnaryTests_1hhd839">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fwwyds">
+          <text>&gt; 500000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14tkt2d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v6q70z">
+          <text>"manual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p59t4f">
+        <description>Маленький стаж - ручная проверка</description>
+        <inputEntry id="UnaryTests_0q7cvvd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wmuaty">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06fimfp">
+          <text>&lt; 6</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rnwtgn">
+          <text>"manual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p1f5p0">
+        <description>Все удовлетворительно - одобрить</description>
+        <inputEntry id="UnaryTests_16dlugv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nl6290">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gbv3d5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d5q1qe">
+          <text>"approve"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape id="Decision_08ajw5g_di" dmnElementRef="credit-scoring">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

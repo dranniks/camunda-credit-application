@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "text": "Клиент: {{clientName}}, сумма: {{amount}} ₽, срок: {{term}} мес.",
+      "type": "text",
+      "layout": {
+        "row": "Row_0ppl05q",
+        "columns": null
+      },
+      "id": "Field_1uoim0x"
+    },
+    {
+      "label": "Клиент подписал документы",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_02x44zb",
+        "columns": null
+      },
+      "id": "Field_17m1de5",
+      "key": "documentsSigned",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "signing-form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.52.0"
+  },
+  "schemaVersion": 19
+}

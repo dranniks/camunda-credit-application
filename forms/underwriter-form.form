@@ -1,0 +1,55 @@
+{
+  "components": [
+    {
+      "text": "# Клиент: {{clientName}}, Сумма: {{amount}} руб., Срок: {{term}} мес., Доход: {{income}} руб.",
+      "type": "text",
+      "layout": {
+        "row": "Row_0ddzcmu",
+        "columns": null
+      },
+      "id": "Field_0l66x14"
+    },
+    {
+      "label": "Решение",
+      "values": [
+        {
+          "label": "Одобрить",
+          "value": "approve"
+        },
+        {
+          "label": "Отказать",
+          "value": "reject"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1c6xjw4",
+        "columns": null
+      },
+      "id": "Field_0jlpr82",
+      "key": "decision",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Комментарий",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0poptd2",
+        "columns": null
+      },
+      "id": "Field_0nf5l27",
+      "key": "comment"
+    }
+  ],
+  "type": "default",
+  "id": "underwriter-form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.52.0"
+  },
+  "schemaVersion": 19
+}
