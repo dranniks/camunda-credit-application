@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="credit" name="Скоринг заявки" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.52.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.10.0">
-  <decision id="credit-scoring" name="Decision 1">
-    <variable id="Variable_1" name="Decision 1" typeRef="Any" />
+  <decision id="credit-scoring" name="Оценка заявки">
+    <variable id="Variable_1" name="Оценка заявки" typeRef="Any" />
     <decisionTable id="DecisionTable_0nd3ujd" hitPolicy="FIRST">
       <input id="Input_1" label="Платеж по силам">
         <inputExpression id="InputExpression_1" typeRef="boolean">
